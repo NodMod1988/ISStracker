@@ -51,6 +51,9 @@
 		89E2B4C629A36E8300FBD710 /* ISStracker */ = {
 			isa = PBXGroup;
 			children = (
+				89E2B4D729A374E000FBD710 /* ViewModel */,
+				89E2B4D629A374D500FBD710 /* Model */,
+				89E2B4D529A374CA00FBD710 /* View */,
 				89E2B4C729A36E8300FBD710 /* ISStrackerApp.swift */,
 				89E2B4C929A36E8300FBD710 /* ContentView.swift */,
 				89E2B4CB29A36E8400FBD710 /* Assets.xcassets */,
@@ -65,6 +68,27 @@
 				89E2B4CE29A36E8400FBD710 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		89E2B4D529A374CA00FBD710 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		89E2B4D629A374D500FBD710 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		89E2B4D729A374E000FBD710 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
