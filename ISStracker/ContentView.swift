@@ -8,19 +8,22 @@
 import SwiftUI
 
 struct ContentView: View {
+    @EnvironmentObject var authService: AuthService
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world 3!")
+        Group{
+            if authService.user != nil{
+                RegistrationView()
+            }else {
+                SpaceLoginView()
+            }
+        }.onAppear{
+            authService.listenToAuthState()
         }
-        .padding()
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView().environmentObject(AuthService())
     }
 }

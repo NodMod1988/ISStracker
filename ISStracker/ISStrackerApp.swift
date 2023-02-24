@@ -20,9 +20,11 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 
 @main
 struct ISStrackerApp: App {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(AuthService())
         }
     }
 }

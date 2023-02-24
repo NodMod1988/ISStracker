@@ -9,14 +9,16 @@ import SwiftUI
 
 
 struct SpaceLoginView: View {
-    @State private var username = ""
+    @EnvironmentObject var authService: AuthService
+    @State private var email = ""
     @State private var password = ""
     @State private var loginFailed: Bool = false
     @State private var registerFailed: Bool = false
-
-        
-        var body: some View {
-            ZStack {
+    
+    
+    var body: some View {
+        NavigationView {
+            VStack {
                 Image("space-background")
                     .resizable()
                     .aspectRatio(contentMode: .fill)
@@ -31,14 +33,14 @@ struct SpaceLoginView: View {
                         .italic()
                     Spacer()
                     VStack(spacing: 16) {
-                        TextField("Username", text: $username)
+                        TextField("Email", text: $email)
                             .padding()
                             .frame(width: 300, height: 50.0 )
                             .background(Color.white)
                             .cornerRadius(5.0)
-                            
+                        
                         Divider()
-                            
+                        
                         SecureField("Password", text: $password)
                             .padding()
                             .frame(width: 300, height: 50.0 )
@@ -50,13 +52,7 @@ struct SpaceLoginView: View {
                     Divider()
                     
                     Button(action: {
-                        if self.username == "admin" && self.password == "1234" {
-                            // Login erfolgreich
-                            self.loginFailed = false
-                        } else {
-                            // Login fehlgeschlagen
-                            self.loginFailed = true
-                        }
+                        authService.signIn(email: email, password: password)
                     }) {
                         Text("Login")
                             .font(.headline)
@@ -67,24 +63,10 @@ struct SpaceLoginView: View {
                             .cornerRadius(15.0)
                     }
                     
-                    Button(action: {
-                        if self.username == "admin" && self.password == "1234" {
-                            // Login erfolgreich
-                            self.loginFailed = false
-                        } else {
-                            // Login fehlgeschlagen
-                            self.loginFailed = true
-                        }
-                    }) {
-                        Text("Register")
-                            .font(.headline)
-                            .foregroundColor(.white)
-                            .padding()
-                            .frame(width: 220, height: 60)
-                            .background(Color.blue)
-                            .cornerRadius(15.0)
-                            
+                    NavigationLink("Register"){
+                        RegistrationView()
                     }
+                    
                 }
                 
                 Spacer()
@@ -94,6 +76,7 @@ struct SpaceLoginView: View {
             }
         }
     }
+}
 
 struct SpaceLoginView_Previews: PreviewProvider {
     static var previews: some View {

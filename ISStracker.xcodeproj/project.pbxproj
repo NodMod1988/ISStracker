@@ -37,6 +37,8 @@
 		89C997D229A768BA00E53615 /* FirebaseRemoteConfigSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 89C997D129A768BA00E53615 /* FirebaseRemoteConfigSwift */; };
 		89C997D429A768BA00E53615 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 89C997D329A768BA00E53615 /* FirebaseStorage */; };
 		89C997D629A768BA00E53615 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 89C997D529A768BA00E53615 /* FirebaseStorageCombine-Community */; };
+		89C997D929A8B01F00E53615 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C997D829A8B01F00E53615 /* RegistrationView.swift */; };
+		89C997DC29A8B19100E53615 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C997DB29A8B19100E53615 /* AuthService.swift */; };
 		89E2B4C829A36E8300FBD710 /* ISStrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E2B4C729A36E8300FBD710 /* ISStrackerApp.swift */; };
 		89E2B4CA29A36E8300FBD710 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E2B4C929A36E8300FBD710 /* ContentView.swift */; };
 		89E2B4CC29A36E8400FBD710 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89E2B4CB29A36E8400FBD710 /* Assets.xcassets */; };
@@ -47,6 +49,9 @@
 		89C9979729A75C2900E53615 /* SpaceLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceLoginView.swift; sourceTree = "<group>"; };
 		89C9979929A75CFF00E53615 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		89C9979E29A7645B00E53615 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		89C997D729A8AA9800E53615 /* ISStracker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ISStracker.entitlements; sourceTree = "<group>"; };
+		89C997D829A8B01F00E53615 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
+		89C997DB29A8B19100E53615 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		89E2B4C429A36E8300FBD710 /* ISStracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ISStracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89E2B4C729A36E8300FBD710 /* ISStrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ISStrackerApp.swift; sourceTree = "<group>"; };
 		89E2B4C929A36E8300FBD710 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -92,6 +97,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		89C997DA29A8B16700E53615 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				89C997DB29A8B19100E53615 /* AuthService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		89E2B4BB29A36E8300FBD710 = {
 			isa = PBXGroup;
 			children = (
@@ -112,6 +125,8 @@
 		89E2B4C629A36E8300FBD710 /* ISStracker */ = {
 			isa = PBXGroup;
 			children = (
+				89C997DA29A8B16700E53615 /* Service */,
+				89C997D729A8AA9800E53615 /* ISStracker.entitlements */,
 				89E2B4D729A374E000FBD710 /* ViewModel */,
 				89E2B4D629A374D500FBD710 /* Model */,
 				89E2B4D529A374CA00FBD710 /* View */,
@@ -135,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				89C9979729A75C2900E53615 /* SpaceLoginView.swift */,
+				89C997D829A8B01F00E53615 /* RegistrationView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -260,7 +276,9 @@
 				89E2B4CA29A36E8300FBD710 /* ContentView.swift in Sources */,
 				89C9979829A75C2900E53615 /* SpaceLoginView.swift in Sources */,
 				89E2B4C829A36E8300FBD710 /* ISStrackerApp.swift in Sources */,
+				89C997DC29A8B19100E53615 /* AuthService.swift in Sources */,
 				89C9979A29A75CFF00E53615 /* MainViewModel.swift in Sources */,
+				89C997D929A8B01F00E53615 /* RegistrationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -386,6 +404,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ISStracker/ISStracker.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ISStracker/Preview Content\"";
@@ -414,6 +433,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ISStracker/ISStracker.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ISStracker/Preview Content\"";
