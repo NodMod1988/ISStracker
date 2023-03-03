@@ -24,7 +24,7 @@ struct ISStrackerApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environmentObject(AuthService())
+                .environmentObject(authService: FireStoreAuthService())
         }
     }
 }

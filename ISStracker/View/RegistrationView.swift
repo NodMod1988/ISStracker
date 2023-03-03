@@ -8,7 +8,10 @@
 import SwiftUI
 
 struct RegistrationView: View {
-    @EnvironmentObject var authService: AuthService
+    
+    @EnvironmentObject var mainViewModel: MainViewModel
+    
+    
     @State private var username: String = ""
     @State private var email: String = ""
     @State private var password: String = ""
@@ -44,7 +47,7 @@ struct RegistrationView: View {
             }
             .padding(.horizontal)
             Button(action: {
-                authService.signUp(email: email, password: password)
+                mainViewModel.authService.signUp(email: email, password: password)
             }) {
                 Text("Register")
                     .font(.headline)
@@ -59,8 +62,3 @@ struct RegistrationView: View {
     }
 }
 
-struct RegistrationView_Previews: PreviewProvider {
-    static var previews: some View {
-        RegistrationView()
-    }
-}

@@ -6,3 +6,20 @@
 //
 
 import Foundation
+
+@MainActor class MainViewModel : ObservableObject{
+
+    var authService: AuthService
+    var dataService: DataService
+    
+    init(authService: AuthService, dataService: DataService) {
+        self.authService = authService
+        self.dataService = dataService
+    }
+    
+
+    func signUp(email: String, password: String){
+        authService.signUp(email: "", password: "")
+    }
+    
+}

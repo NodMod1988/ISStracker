@@ -8,22 +8,26 @@
 import SwiftUI
 
 struct ContentView: View {
-    @EnvironmentObject var authService: AuthService
+    
+    @EnvironmentObject var mainviewModel : MainViewModel
+    
     var body: some View {
         Group{
-            if authService.user != nil{
+            if mainviewModel.authService.user != nil{
                 RegistrationView()
             }else {
                 SpaceLoginView()
             }
         }.onAppear{
-            authService.listenToAuthState()
+            mainviewModel.authService.listenToAuthState()
         }
     }
+        .Environment(MainViewModel(authService: FireStoreAuthService, dataService: Data))
 }
+    
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView().environmentObject(AuthService())
+        ContentView(authService: FireStoreAuthService())
     }
 }

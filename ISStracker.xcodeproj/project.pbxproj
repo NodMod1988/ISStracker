@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		89B5791A29ACAEDC0021A0C1 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B5791929ACAEDC0021A0C1 /* MainView.swift */; };
+		89B5791C29ACB1230021A0C1 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B5791B29ACB1230021A0C1 /* AuthService.swift */; };
+		89B5792029ACC89B0021A0C1 /* ISSApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B5791F29ACC89B0021A0C1 /* ISSApi.swift */; };
+		89B5792329ACC8D50021A0C1 /* ISSApiImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B5792229ACC8D50021A0C1 /* ISSApiImpl.swift */; };
+		89B5792529ACE49D0021A0C1 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B5792429ACE49D0021A0C1 /* DataSource.swift */; };
+		89B5792729ACE4E50021A0C1 /* Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B5792629ACE4E50021A0C1 /* Position.swift */; };
+		89B5792929ACF6000021A0C1 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B5792829ACF6000021A0C1 /* DataService.swift */; };
 		89C9979829A75C2900E53615 /* SpaceLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C9979729A75C2900E53615 /* SpaceLoginView.swift */; };
 		89C9979A29A75CFF00E53615 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C9979929A75CFF00E53615 /* MainViewModel.swift */; };
 		89C9979F29A7645B00E53615 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 89C9979E29A7645B00E53615 /* GoogleService-Info.plist */; };
@@ -38,7 +45,7 @@
 		89C997D429A768BA00E53615 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 89C997D329A768BA00E53615 /* FirebaseStorage */; };
 		89C997D629A768BA00E53615 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 89C997D529A768BA00E53615 /* FirebaseStorageCombine-Community */; };
 		89C997D929A8B01F00E53615 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C997D829A8B01F00E53615 /* RegistrationView.swift */; };
-		89C997DC29A8B19100E53615 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C997DB29A8B19100E53615 /* AuthService.swift */; };
+		89C997DC29A8B19100E53615 /* FireStoreAuthServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C997DB29A8B19100E53615 /* FireStoreAuthServiceImpl.swift */; };
 		89E2B4C829A36E8300FBD710 /* ISStrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E2B4C729A36E8300FBD710 /* ISStrackerApp.swift */; };
 		89E2B4CA29A36E8300FBD710 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E2B4C929A36E8300FBD710 /* ContentView.swift */; };
 		89E2B4CC29A36E8400FBD710 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89E2B4CB29A36E8400FBD710 /* Assets.xcassets */; };
@@ -46,12 +53,19 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		89B5791929ACAEDC0021A0C1 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		89B5791B29ACB1230021A0C1 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		89B5791F29ACC89B0021A0C1 /* ISSApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ISSApi.swift; sourceTree = "<group>"; };
+		89B5792229ACC8D50021A0C1 /* ISSApiImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ISSApiImpl.swift; sourceTree = "<group>"; };
+		89B5792429ACE49D0021A0C1 /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
+		89B5792629ACE4E50021A0C1 /* Position.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Position.swift; sourceTree = "<group>"; };
+		89B5792829ACF6000021A0C1 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		89C9979729A75C2900E53615 /* SpaceLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceLoginView.swift; sourceTree = "<group>"; };
 		89C9979929A75CFF00E53615 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		89C9979E29A7645B00E53615 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		89C997D729A8AA9800E53615 /* ISStracker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ISStracker.entitlements; sourceTree = "<group>"; };
 		89C997D829A8B01F00E53615 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
-		89C997DB29A8B19100E53615 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		89C997DB29A8B19100E53615 /* FireStoreAuthServiceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireStoreAuthServiceImpl.swift; sourceTree = "<group>"; };
 		89E2B4C429A36E8300FBD710 /* ISStracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ISStracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89E2B4C729A36E8300FBD710 /* ISStrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ISStrackerApp.swift; sourceTree = "<group>"; };
 		89E2B4C929A36E8300FBD710 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -97,10 +111,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		89B5791D29ACC7B60021A0C1 /* ServiceImpl */ = {
+			isa = PBXGroup;
+			children = (
+				89C997DB29A8B19100E53615 /* FireStoreAuthServiceImpl.swift */,
+			);
+			name = ServiceImpl;
+			path = "ServiceImpöl";
+			sourceTree = "<group>";
+		};
+		89B5791E29ACC8050021A0C1 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				89B5792129ACC8B90021A0C1 /* APIimpl */,
+				89B5791F29ACC89B0021A0C1 /* ISSApi.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		89B5792129ACC8B90021A0C1 /* APIimpl */ = {
+			isa = PBXGroup;
+			children = (
+				89B5792229ACC8D50021A0C1 /* ISSApiImpl.swift */,
+			);
+			path = APIimpl;
+			sourceTree = "<group>";
+		};
 		89C997DA29A8B16700E53615 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				89C997DB29A8B19100E53615 /* AuthService.swift */,
+				89B5791D29ACC7B60021A0C1 /* ServiceImpl */,
+				89B5791B29ACB1230021A0C1 /* AuthService.swift */,
+				89B5792829ACF6000021A0C1 /* DataService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -125,6 +167,7 @@
 		89E2B4C629A36E8300FBD710 /* ISStracker */ = {
 			isa = PBXGroup;
 			children = (
+				89B5791E29ACC8050021A0C1 /* API */,
 				89C997DA29A8B16700E53615 /* Service */,
 				89C997D729A8AA9800E53615 /* ISStracker.entitlements */,
 				89E2B4D729A374E000FBD710 /* ViewModel */,
@@ -151,6 +194,7 @@
 			children = (
 				89C9979729A75C2900E53615 /* SpaceLoginView.swift */,
 				89C997D829A8B01F00E53615 /* RegistrationView.swift */,
+				89B5791929ACAEDC0021A0C1 /* MainView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -158,6 +202,8 @@
 		89E2B4D629A374D500FBD710 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				89B5792429ACE49D0021A0C1 /* DataSource.swift */,
+				89B5792629ACE4E50021A0C1 /* Position.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -274,11 +320,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				89E2B4CA29A36E8300FBD710 /* ContentView.swift in Sources */,
+				89B5792929ACF6000021A0C1 /* DataService.swift in Sources */,
+				89B5791A29ACAEDC0021A0C1 /* MainView.swift in Sources */,
+				89B5792729ACE4E50021A0C1 /* Position.swift in Sources */,
 				89C9979829A75C2900E53615 /* SpaceLoginView.swift in Sources */,
 				89E2B4C829A36E8300FBD710 /* ISStrackerApp.swift in Sources */,
-				89C997DC29A8B19100E53615 /* AuthService.swift in Sources */,
+				89C997DC29A8B19100E53615 /* FireStoreAuthServiceImpl.swift in Sources */,
 				89C9979A29A75CFF00E53615 /* MainViewModel.swift in Sources */,
+				89B5792329ACC8D50021A0C1 /* ISSApiImpl.swift in Sources */,
 				89C997D929A8B01F00E53615 /* RegistrationView.swift in Sources */,
+				89B5792029ACC89B0021A0C1 /* ISSApi.swift in Sources */,
+				89B5792529ACE49D0021A0C1 /* DataSource.swift in Sources */,
+				89B5791C29ACB1230021A0C1 /* AuthService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

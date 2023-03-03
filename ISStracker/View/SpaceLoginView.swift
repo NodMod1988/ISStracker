@@ -9,7 +9,9 @@ import SwiftUI
 
 
 struct SpaceLoginView: View {
-    @EnvironmentObject var authService: AuthService
+
+    @EnvironmentObject var mainViewModel: MainViewModel
+    
     @State private var email = ""
     @State private var password = ""
     @State private var loginFailed: Bool = false
@@ -52,7 +54,7 @@ struct SpaceLoginView: View {
                     Divider()
                     
                     Button(action: {
-                        authService.signIn(email: email, password: password)
+                        mainViewModel.authService.signUp(email: <#T##String#>, password: <#T##String#>)
                     }) {
                         Text("Login")
                             .font(.headline)
@@ -78,8 +80,4 @@ struct SpaceLoginView: View {
     }
 }
 
-struct SpaceLoginView_Previews: PreviewProvider {
-    static var previews: some View {
-        SpaceLoginView()
-    }
-}
+
