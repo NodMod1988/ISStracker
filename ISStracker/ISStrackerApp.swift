@@ -21,10 +21,13 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 @main
 struct ISStrackerApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+    var globalAuthService: AuthService = AuthService(auth: FireStoreAuthService())
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environmentObject(authService: FireStoreAuthService())
+                .environmentObject(AuthViewModel(authService: globalAuthService))
+                
+                
         }
     }
 }

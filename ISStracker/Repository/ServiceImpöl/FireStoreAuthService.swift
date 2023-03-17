@@ -8,12 +8,21 @@
 import Foundation
 import FirebaseAuth
 
-final class FireStoreAuthService: ObservableObject, AuthService{
+final class FireStoreAuthService: ObservableObject, AuthProtocoll{
     
     var user: User?{
         didSet{
             objectWillChange.send()
         }
+    }
+    
+    func getUser()throws ->User? {
+        do{
+            return try user
+        }catch{
+            
+        }
+        
     }
     
     func listenToAuthState(){

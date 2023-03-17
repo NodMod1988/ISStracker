@@ -9,7 +9,7 @@ import SwiftUI
 
 struct RegistrationView: View {
     
-    @EnvironmentObject var mainViewModel: MainViewModel
+    @EnvironmentObject var authViewModel: AuthViewModel
     
     
     @State private var username: String = ""
@@ -47,7 +47,7 @@ struct RegistrationView: View {
             }
             .padding(.horizontal)
             Button(action: {
-                mainViewModel.authService.signUp(email: email, password: password)
+                authViewModel.authService.signUp(email: email, password: password)
             }) {
                 Text("Register")
                     .font(.headline)

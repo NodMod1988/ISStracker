@@ -10,7 +10,7 @@ import SwiftUI
 
 struct SpaceLoginView: View {
 
-    @EnvironmentObject var mainViewModel: MainViewModel
+    @EnvironmentObject var authViewModel: AuthViewModel
     
     @State private var email = ""
     @State private var password = ""
@@ -54,7 +54,7 @@ struct SpaceLoginView: View {
                     Divider()
                     
                     Button(action: {
-                        mainViewModel.authService.signUp(email: <#T##String#>, password: <#T##String#>)
+                        authViewModel.authService.signUp(email: "", password: "")
                     }) {
                         Text("Login")
                             .font(.headline)

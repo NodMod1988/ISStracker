@@ -7,27 +7,29 @@
 
 import SwiftUI
 
+
+
 struct ContentView: View {
     
-    @EnvironmentObject var mainviewModel : MainViewModel
+    @EnvironmentObject var authViewModel: AuthViewModel
+
+    @State var password: String = ""
+    @State var email: String = ""
     
     var body: some View {
-        Group{
-            if mainviewModel.authService.user != nil{
-                RegistrationView()
+        HStack{
+            if authViewModel.authService.auth.getUser() != nil{
+                MainView()
             }else {
                 SpaceLoginView()
             }
         }.onAppear{
-            mainviewModel.authService.listenToAuthState()
+            
+            authViewModel.authService.listenToAuthState()
         }
     }
-        .Environment(MainViewModel(authService: FireStoreAuthService, dataService: Data))
+  
 }
     
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView(authService: FireStoreAuthService())
-    }
-}
+

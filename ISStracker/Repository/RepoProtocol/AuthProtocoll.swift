@@ -6,8 +6,11 @@
 //
 
 import Foundation
+import FirebaseAuth
 
-protocol AuthService{
+protocol AuthProtocoll{
+
+    func getUser()-> User?
     
     func listenToAuthState()
     
