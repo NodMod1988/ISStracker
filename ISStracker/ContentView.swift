@@ -11,21 +11,21 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @EnvironmentObject var authViewModel: AuthViewModel
+    @EnvironmentObject var authService: FireStoreAuthService
 
     @State var password: String = ""
     @State var email: String = ""
     
     var body: some View {
         HStack{
-            if authViewModel.authService.auth.getUser() != nil{
+            if authService.user != nil {
                 MainView()
             }else {
                 SpaceLoginView()
             }
         }.onAppear{
             
-            authViewModel.authService.listenToAuthState()
+            authService.listenToAuthState()
         }
     }
   

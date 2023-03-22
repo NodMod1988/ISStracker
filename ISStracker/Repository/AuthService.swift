@@ -15,12 +15,7 @@ final class AuthService: ObservableObject{
     init(auth: AuthProtocoll) {
         self.auth = auth
     }
-    
-    func getUser()->User{
-        return auth.getUser()
-        
-    }
-    
+
     func listenToAuthState(){
         auth.listenToAuthState()
     }
@@ -36,7 +31,5 @@ final class AuthService: ObservableObject{
     func signOut(){
         auth.signOut()
     }
-    
- 
     
 }

@@ -9,14 +9,12 @@ import SwiftUI
 
 struct RegistrationView: View {
     
-    @EnvironmentObject var authViewModel: AuthViewModel
-    
+    @EnvironmentObject var authService: FireStoreAuthService
     
     @State private var username: String = ""
     @State private var email: String = ""
     @State private var password: String = ""
 
-    
     var body: some View {
         VStack {
         
@@ -47,7 +45,7 @@ struct RegistrationView: View {
             }
             .padding(.horizontal)
             Button(action: {
-                authViewModel.authService.signUp(email: email, password: password)
+                authService.signUp(email: email, password: password)
             }) {
                 Text("Register")
                     .font(.headline)

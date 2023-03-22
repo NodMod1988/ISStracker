@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		890E29E429C9BFA400C848CA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 890E29E329C9BFA400C848CA /* GoogleService-Info.plist */; };
+		890E29E929C9DFDC00C848CA /* ISS.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 890E29E829C9DFDC00C848CA /* ISS.usdz */; };
+		890E29EB29C9F59A00C848CA /* Earth.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 890E29EA29C9F59A00C848CA /* Earth.usdz */; };
+		890E29ED29CAFB2000C848CA /* IssSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890E29EC29CAFB2000C848CA /* IssSceneView.swift */; };
+		890E29EF29CB029B00C848CA /* EarthSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890E29EE29CB029B00C848CA /* EarthSceneView.swift */; };
 		89B5791A29ACAEDC0021A0C1 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B5791929ACAEDC0021A0C1 /* MainView.swift */; };
 		89B5791C29ACB1230021A0C1 /* AuthProtocoll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B5791B29ACB1230021A0C1 /* AuthProtocoll.swift */; };
 		89B5792029ACC89B0021A0C1 /* ISSApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B5791F29ACC89B0021A0C1 /* ISSApi.swift */; };
@@ -52,6 +57,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		890E29E329C9BFA400C848CA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		890E29E829C9DFDC00C848CA /* ISS.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; name = ISS.usdz; path = ../../../../Downloads/ISS.usdz; sourceTree = "<group>"; };
+		890E29EA29C9F59A00C848CA /* Earth.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; name = Earth.usdz; path = ../../../../Downloads/Earth.usdz; sourceTree = "<group>"; };
+		890E29EC29CAFB2000C848CA /* IssSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssSceneView.swift; sourceTree = "<group>"; };
+		890E29EE29CB029B00C848CA /* EarthSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarthSceneView.swift; sourceTree = "<group>"; };
 		89B5791929ACAEDC0021A0C1 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		89B5791B29ACB1230021A0C1 /* AuthProtocoll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthProtocoll.swift; sourceTree = "<group>"; };
 		89B5791F29ACC89B0021A0C1 /* ISSApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ISSApi.swift; sourceTree = "<group>"; };
@@ -63,7 +73,6 @@
 		89C997D729A8AA9800E53615 /* ISStracker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ISStracker.entitlements; sourceTree = "<group>"; };
 		89C997D829A8B01F00E53615 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		89C997DB29A8B19100E53615 /* FireStoreAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireStoreAuthService.swift; sourceTree = "<group>"; };
-		89CFDEC329C45D9900E784A5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		89CFDEC529C469A400E784A5 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		89E2B4C429A36E8300FBD710 /* ISStracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ISStracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89E2B4C729A36E8300FBD710 /* ISStrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ISStrackerApp.swift; sourceTree = "<group>"; };
@@ -110,12 +119,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		89B5791D29ACC7B60021A0C1 /* ReposImpl */ = {
+		890E29E529C9C32800C848CA /* 3DModels */ = {
+			isa = PBXGroup;
+			children = (
+				890E29EA29C9F59A00C848CA /* Earth.usdz */,
+				890E29E829C9DFDC00C848CA /* ISS.usdz */,
+				890E29EC29CAFB2000C848CA /* IssSceneView.swift */,
+				890E29EE29CB029B00C848CA /* EarthSceneView.swift */,
+			);
+			path = 3DModels;
+			sourceTree = "<group>";
+		};
+		89B5791D29ACC7B60021A0C1 /* ServiceImpl */ = {
 			isa = PBXGroup;
 			children = (
 				89C997DB29A8B19100E53615 /* FireStoreAuthService.swift */,
 			);
-			name = ReposImpl;
+			name = ServiceImpl;
 			path = "ServiceImpöl";
 			sourceTree = "<group>";
 		};
@@ -139,19 +159,19 @@
 		89C997DA29A8B16700E53615 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
-				89CFDEC429C4662C00E784A5 /* RepoProtocol */,
-				89B5791D29ACC7B60021A0C1 /* ReposImpl */,
+				89CFDEC429C4662C00E784A5 /* ServiceProtocol */,
+				89B5791D29ACC7B60021A0C1 /* ServiceImpl */,
 				89CFDEC529C469A400E784A5 /* AuthService.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
 		};
-		89CFDEC429C4662C00E784A5 /* RepoProtocol */ = {
+		89CFDEC429C4662C00E784A5 /* ServiceProtocol */ = {
 			isa = PBXGroup;
 			children = (
 				89B5791B29ACB1230021A0C1 /* AuthProtocoll.swift */,
 			);
-			path = RepoProtocol;
+			path = ServiceProtocol;
 			sourceTree = "<group>";
 		};
 		89E2B4BB29A36E8300FBD710 = {
@@ -173,7 +193,8 @@
 		89E2B4C629A36E8300FBD710 /* ISStracker */ = {
 			isa = PBXGroup;
 			children = (
-				89CFDEC329C45D9900E784A5 /* GoogleService-Info.plist */,
+				890E29E529C9C32800C848CA /* 3DModels */,
+				890E29E329C9BFA400C848CA /* GoogleService-Info.plist */,
 				89B5791E29ACC8050021A0C1 /* API */,
 				89C997DA29A8B16700E53615 /* Repository */,
 				89C997D729A8AA9800E53615 /* ISStracker.entitlements */,
@@ -314,7 +335,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				89E2B4CF29A36E8400FBD710 /* Preview Assets.xcassets in Resources */,
+				890E29EB29C9F59A00C848CA /* Earth.usdz in Resources */,
 				89E2B4CC29A36E8400FBD710 /* Assets.xcassets in Resources */,
+				890E29E429C9BFA400C848CA /* GoogleService-Info.plist in Resources */,
+				890E29E929C9DFDC00C848CA /* ISS.usdz in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,11 +349,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				890E29EF29CB029B00C848CA /* EarthSceneView.swift in Sources */,
 				89E2B4CA29A36E8300FBD710 /* ContentView.swift in Sources */,
 				89B5791A29ACAEDC0021A0C1 /* MainView.swift in Sources */,
 				89B5792729ACE4E50021A0C1 /* Position.swift in Sources */,
 				89C9979829A75C2900E53615 /* SpaceLoginView.swift in Sources */,
 				89E2B4C829A36E8300FBD710 /* ISStrackerApp.swift in Sources */,
+				890E29ED29CAFB2000C848CA /* IssSceneView.swift in Sources */,
 				89C997DC29A8B19100E53615 /* FireStoreAuthService.swift in Sources */,
 				89CFDEC629C469A400E784A5 /* AuthService.swift in Sources */,
 				89C9979A29A75CFF00E53615 /* AuthViewModel.swift in Sources */,

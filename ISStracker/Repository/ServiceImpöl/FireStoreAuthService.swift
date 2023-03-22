@@ -8,7 +8,8 @@
 import Foundation
 import FirebaseAuth
 
-final class FireStoreAuthService: ObservableObject, AuthProtocoll{
+final class FireStoreAuthService: ObservableObject{
+    
     
     var user: User?{
         didSet{
@@ -16,14 +17,6 @@ final class FireStoreAuthService: ObservableObject, AuthProtocoll{
         }
     }
     
-    func getUser()throws ->User? {
-        do{
-            return try user
-        }catch{
-            
-        }
-        
-    }
     
     func listenToAuthState(){
         Auth.auth().addStateDidChangeListener { [weak self] _, user in

@@ -7,16 +7,14 @@
 
 import SwiftUI
 
-
 struct SpaceLoginView: View {
 
-    @EnvironmentObject var authViewModel: AuthViewModel
+    @EnvironmentObject var authService: FireStoreAuthService
     
     @State private var email = ""
     @State private var password = ""
     @State private var loginFailed: Bool = false
     @State private var registerFailed: Bool = false
-    
     
     var body: some View {
         NavigationView {
@@ -54,7 +52,7 @@ struct SpaceLoginView: View {
                     Divider()
                     
                     Button(action: {
-                        authViewModel.authService.signUp(email: "", password: "")
+                        authService.signUp(email: "", password: "")
                     }) {
                         Text("Login")
                             .font(.headline)

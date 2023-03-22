@@ -6,10 +6,27 @@
 //
 
 import SwiftUI
+import SceneKit
+
+
 
 struct MainView: View {
+    
+    @State var sceneISS: SCNScene? = .init(named: "ISS.usdz")
+    @State var sceneEarth: SCNScene? = .init(named: "Earth.usdz")
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack{
+            EarthSceneView(scene: $sceneEarth)
+                
+            VStack{
+                IssSceneView(scene: $sceneISS)
+                    .frame(height: 350)
+      
+
+            }
+            .padding()
+        }
     }
 }
 

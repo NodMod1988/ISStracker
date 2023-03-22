@@ -10,7 +10,6 @@ import FirebaseAuth
 
 protocol AuthProtocoll{
 
-    func getUser()-> User?
     
     func listenToAuthState()
     
