@@ -12,7 +12,8 @@ import SwiftUI
 struct ContentView: View {
     
     @EnvironmentObject var authService: FireStoreAuthService
-
+    @EnvironmentObject var issLocationViewModel: ISSLocationViewModel
+    
     @State var password: String = ""
     @State var email: String = ""
     

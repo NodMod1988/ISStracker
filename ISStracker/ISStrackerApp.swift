@@ -26,6 +26,7 @@ struct ISStrackerApp: App {
         WindowGroup {
             ContentView()
                 .environmentObject(FireStoreAuthService())
+                .environmentObject(ISSLocationViewModel())
                 
                 
                 

@@ -12,6 +12,8 @@
 		890E29EB29C9F59A00C848CA /* Earth.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 890E29EA29C9F59A00C848CA /* Earth.usdz */; };
 		890E29ED29CAFB2000C848CA /* IssSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890E29EC29CAFB2000C848CA /* IssSceneView.swift */; };
 		890E29EF29CB029B00C848CA /* EarthSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890E29EE29CB029B00C848CA /* EarthSceneView.swift */; };
+		890E29F129CC870600C848CA /* LocationMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890E29F029CC870600C848CA /* LocationMapView.swift */; };
+		890E29F329CC918600C848CA /* ISSLocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890E29F229CC918600C848CA /* ISSLocationViewModel.swift */; };
 		89B5791A29ACAEDC0021A0C1 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B5791929ACAEDC0021A0C1 /* MainView.swift */; };
 		89B5791C29ACB1230021A0C1 /* AuthProtocoll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B5791B29ACB1230021A0C1 /* AuthProtocoll.swift */; };
 		89B5792029ACC89B0021A0C1 /* ISSApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B5791F29ACC89B0021A0C1 /* ISSApi.swift */; };
@@ -62,6 +64,9 @@
 		890E29EA29C9F59A00C848CA /* Earth.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; name = Earth.usdz; path = ../../../../Downloads/Earth.usdz; sourceTree = "<group>"; };
 		890E29EC29CAFB2000C848CA /* IssSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssSceneView.swift; sourceTree = "<group>"; };
 		890E29EE29CB029B00C848CA /* EarthSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarthSceneView.swift; sourceTree = "<group>"; };
+		890E29F029CC870600C848CA /* LocationMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationMapView.swift; sourceTree = "<group>"; };
+		890E29F229CC918600C848CA /* ISSLocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ISSLocationViewModel.swift; sourceTree = "<group>"; };
+		890E29F429CDBA3C00C848CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		89B5791929ACAEDC0021A0C1 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		89B5791B29ACB1230021A0C1 /* AuthProtocoll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthProtocoll.swift; sourceTree = "<group>"; };
 		89B5791F29ACC89B0021A0C1 /* ISSApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ISSApi.swift; sourceTree = "<group>"; };
@@ -193,6 +198,7 @@
 		89E2B4C629A36E8300FBD710 /* ISStracker */ = {
 			isa = PBXGroup;
 			children = (
+				890E29F429CDBA3C00C848CA /* Info.plist */,
 				890E29E529C9C32800C848CA /* 3DModels */,
 				890E29E329C9BFA400C848CA /* GoogleService-Info.plist */,
 				89B5791E29ACC8050021A0C1 /* API */,
@@ -223,6 +229,7 @@
 				89C9979729A75C2900E53615 /* SpaceLoginView.swift */,
 				89C997D829A8B01F00E53615 /* RegistrationView.swift */,
 				89B5791929ACAEDC0021A0C1 /* MainView.swift */,
+				890E29F029CC870600C848CA /* LocationMapView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -240,6 +247,7 @@
 			isa = PBXGroup;
 			children = (
 				89C9979929A75CFF00E53615 /* AuthViewModel.swift */,
+				890E29F229CC918600C848CA /* ISSLocationViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -351,8 +359,10 @@
 			files = (
 				890E29EF29CB029B00C848CA /* EarthSceneView.swift in Sources */,
 				89E2B4CA29A36E8300FBD710 /* ContentView.swift in Sources */,
+				890E29F129CC870600C848CA /* LocationMapView.swift in Sources */,
 				89B5791A29ACAEDC0021A0C1 /* MainView.swift in Sources */,
 				89B5792729ACE4E50021A0C1 /* Position.swift in Sources */,
+				890E29F329CC918600C848CA /* ISSLocationViewModel.swift in Sources */,
 				89C9979829A75C2900E53615 /* SpaceLoginView.swift in Sources */,
 				89E2B4C829A36E8300FBD710 /* ISStrackerApp.swift in Sources */,
 				890E29ED29CAFB2000C848CA /* IssSceneView.swift in Sources */,
@@ -492,9 +502,11 @@
 				CODE_SIGN_ENTITLEMENTS = ISStracker/ISStracker.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"ISStracker/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ISStracker/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -524,6 +536,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"ISStracker/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ISStracker/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

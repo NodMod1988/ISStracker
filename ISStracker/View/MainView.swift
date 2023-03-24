@@ -14,19 +14,30 @@ struct MainView: View {
     
     @State var sceneISS: SCNScene? = .init(named: "ISS.usdz")
     @State var sceneEarth: SCNScene? = .init(named: "Earth.usdz")
-
+    @EnvironmentObject var locationViewModel: ISSLocationViewModel
     var body: some View {
-        ZStack{
-            EarthSceneView(scene: $sceneEarth)
+        
+        TabView{
+            ZStack{
+                EarthSceneView(scene: $sceneEarth)
                 
-            VStack{
-                IssSceneView(scene: $sceneISS)
-                    .frame(height: 350)
-      
-
+                VStack{
+                    IssSceneView(scene: $sceneISS)
+                        .frame(height: 350)
+                    
+                    
+                }
+                .padding()
             }
-            .padding()
+            
+            
+            LocationMapView()
+                .tabItem{
+                    Label("Click me", systemImage: "")
+                }
         }
+        
+        
     }
 }
 
