@@ -53,6 +53,7 @@
 		89C997D929A8B01F00E53615 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C997D829A8B01F00E53615 /* RegistrationView.swift */; };
 		89C997DC29A8B19100E53615 /* FireStoreAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C997DB29A8B19100E53615 /* FireStoreAuthService.swift */; };
 		89CFDEC629C469A400E784A5 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CFDEC529C469A400E784A5 /* AuthService.swift */; };
+		89E188BC29D442F000712B6D /* MKPointAnnotationWithID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E188BB29D442F000712B6D /* MKPointAnnotationWithID.swift */; };
 		89E2B4C829A36E8300FBD710 /* ISStrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E2B4C729A36E8300FBD710 /* ISStrackerApp.swift */; };
 		89E2B4CA29A36E8300FBD710 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E2B4C929A36E8300FBD710 /* ContentView.swift */; };
 		89E2B4CC29A36E8400FBD710 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89E2B4CB29A36E8400FBD710 /* Assets.xcassets */; };
@@ -81,6 +82,7 @@
 		89C997D829A8B01F00E53615 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		89C997DB29A8B19100E53615 /* FireStoreAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireStoreAuthService.swift; sourceTree = "<group>"; };
 		89CFDEC529C469A400E784A5 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		89E188BB29D442F000712B6D /* MKPointAnnotationWithID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MKPointAnnotationWithID.swift; sourceTree = "<group>"; };
 		89E2B4C429A36E8300FBD710 /* ISStracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ISStracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89E2B4C729A36E8300FBD710 /* ISStrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ISStrackerApp.swift; sourceTree = "<group>"; };
 		89E2B4C929A36E8300FBD710 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				890E29F629D1184400C848CA /* Coordinator.swift */,
+				89E188BB29D442F000712B6D /* MKPointAnnotationWithID.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -380,6 +383,7 @@
 				890E29ED29CAFB2000C848CA /* IssSceneView.swift in Sources */,
 				89C997DC29A8B19100E53615 /* FireStoreAuthService.swift in Sources */,
 				89CFDEC629C469A400E784A5 /* AuthService.swift in Sources */,
+				89E188BC29D442F000712B6D /* MKPointAnnotationWithID.swift in Sources */,
 				89C9979A29A75CFF00E53615 /* AuthViewModel.swift in Sources */,
 				89B5792329ACC8D50021A0C1 /* ISSApiImpl.swift in Sources */,
 				89C997D929A8B01F00E53615 /* RegistrationView.swift in Sources */,

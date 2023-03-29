@@ -1,92 +1,69 @@
-//
-//  LocationMapView.swift
-//  ISStracker
-//
-//  Created by Ruben Niewerth on 23.03.23.
-//
-
 import SwiftUI
 import MapKit
 
-struct LocationMapView: UIViewRepresentable {
+struct LocationMapView: View {
     
-    @EnvironmentObject var viewModel:ISSLocationViewModel
-    @State var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 51.507222, longitude: -0.1275), span: MKCoordinateSpan(latitudeDelta: 5, longitudeDelta: 5))
-    @State private var zoomFactor = 1.0
+    @EnvironmentObject var viewModel: ISSLocationViewModel
+    @State  var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 51.507222, longitude: -0.1275), span: MKCoordinateSpan(latitudeDelta: 5, longitudeDelta: 5))
+    @State  var zoomFactor = 1.0
+    @State  var annotations: [MKPointAnnotationWithID] = []
     
-    func makeUIView(context: Context) -> MKMapView {
-        let mapView = MKMapView()
-        mapView.showsUserLocation = false
-        mapView.delegate = Coordinator(self)         
-        let zoomInButton = UIButton(type: .custom)
-        zoomInButton.setImage(UIImage(systemName: "plus"), for: .normal)
-        zoomInButton.addTarget(context.coordinator, action: #selector(Coordinator.zoomIn), for: .touchUpInside)
-        
-        let zoomOutButton = UIButton(type: .custom)
-        zoomOutButton.setImage(UIImage(systemName: "minus"), for: .normal)
-        zoomOutButton.addTarget(context.coordinator, action: #selector(Coordinator.zoomOut), for: .touchUpInside)
-        
-        mapView.addSubview(zoomInButton)
-        mapView.addSubview(zoomOutButton)
-        
-        zoomInButton.translatesAutoresizingMaskIntoConstraints = false
-        zoomInButton.bottomAnchor.constraint(equalTo: mapView.bottomAnchor, constant: -16).isActive = true
-        zoomInButton.trailingAnchor.constraint(equalTo: mapView.trailingAnchor, constant: -16).isActive = true
-        
-        zoomOutButton.translatesAutoresizingMaskIntoConstraints = false
-        zoomOutButton.bottomAnchor.constraint(equalTo: zoomInButton.topAnchor, constant: -16).isActive = true
-        zoomOutButton.trailingAnchor.constraint(equalTo: mapView.trailingAnchor, constant: -16).isActive = true
-        
- 
-        func zoomIn() {
-            zoomMap(by: 0.5)
-        }
-        
+    var body: some View {
+        VStack {
+            HStack {
+                Button(action: zoomIn) {
+                    Image(systemName: "plus.circle")
+                }
+                .padding()
 
-        func zoomOut() {
-            zoomMap(by: 2.0)
-        }
-        
-     
-        func zoomMap(by factor: Double) {
-            var region = self.region
-            region.span.latitudeDelta *= factor
-            region.span.longitudeDelta *= factor
-            self.region = region
-        }
-        
-        return mapView
-    }
-    
-    func updateUIView(_ mapView: MKMapView, context: Context) {
-        
-        
-        Timer.scheduledTimer(withTimeInterval: 30.0, repeats: true) { timer in
-            viewModel.fetchISSLocation()
-        }
-        
-        if let issLocation = viewModel.issLocation {
-            let span = MKCoordinateSpan(latitudeDelta: 5, longitudeDelta: 5)
-            let region = MKCoordinateRegion(center: issLocation, span: span)
-            mapView.setRegion(region, animated: true)
-            
-            let annotation = MKPointAnnotation()
-            annotation.coordinate = issLocation
-            annotation.title = "ISS Location"
-            mapView.addAnnotation(annotation)
-            
-            if let issLongitude = viewModel.issLongitude, let issLatitude = viewModel.issLatitude {
-                print("ISS location: \(issLatitude), \(issLongitude)")
+                Button(action: zoomOut) {
+                    Image(systemName: "minus.circle")
+                }
+                .padding()
+
+                Spacer()
             }
-        } else if let errorMessage = viewModel.errorMessage {
-            let alert = UIAlertController(title: "Error", message: errorMessage, preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default))
-            UIApplication.shared.windows.first?.rootViewController?.present(alert, animated: true)
+
+            makeBody()
         }
     }
     
-    func makeCoordinator() -> Coordinator {
-        Coordinator(self)
+    private func zoomIn() {
+        zoomFactor /= 2
+        updateRegion()
     }
-    
+
+    private func zoomOut() {
+        zoomFactor *= 2
+        updateRegion()
+    }
+
+    private func updateRegion() {
+        let span = MKCoordinateSpan(latitudeDelta: region.span.latitudeDelta * zoomFactor, longitudeDelta: region.span.longitudeDelta * zoomFactor)
+        region = MKCoordinateRegion(center: region.center, span: span)
+    }
+        
+    private func makeBody() -> some View {
+        Map(coordinateRegion: $region, annotationItems: annotations) { annotation in
+            MapAnnotation(coordinate: annotation.coordinate) {
+                Image(systemName: "mappin.circle.fill")
+                    .foregroundColor(.red)
+            }
+        }
+        .onAppear {
+            Timer.scheduledTimer(withTimeInterval: 30.0, repeats: true) { timer in
+                viewModel.fetchISSLocation()
+            }
+        }
+        .onReceive(viewModel.$issLocation) { issLocation in
+            if let issLocation = issLocation {
+                let annotation = MKPointAnnotation()
+                annotation.coordinate = issLocation
+                annotation.title = "ISS Location"
+                annotations = [MKPointAnnotationWithID(__coordinate: annotation.coordinate)]
+                region = MKCoordinateRegion(center: annotation.coordinate, span: MKCoordinateSpan(latitudeDelta: 5, longitudeDelta: 5))
+            }
+        }
+
+    }
 }

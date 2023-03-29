@@ -20,14 +20,14 @@ class Coordinator: NSObject, MKMapViewDelegate {
         print("New region: \(parent.region)")
     }
     
-    @objc func zoomIn() {
+    func zoomIn() {
         var region = parent.region
         region.span.latitudeDelta *= 0.5
         region.span.longitudeDelta *= 0.5
         parent.region = region
     }
     
-    @objc func zoomOut() {
+    func zoomOut() {
         var region = parent.region
         region.span.latitudeDelta *= 2
         region.span.longitudeDelta *= 2
@@ -44,11 +44,11 @@ class Coordinator: NSObject, MKMapViewDelegate {
     func mapViewDidFinishLoadingMap(_ mapView: MKMapView) {
         let zoomInButton = UIButton(type: .custom)
         zoomInButton.setImage(UIImage(systemName: "plus"), for: .normal)
-        zoomInButton.addTarget(self, action: #selector(zoomIn), for: .touchUpInside)
+        //zoomInButton.addTarget(self, action: zoomIn, for: .touchUpInside)
         
         let zoomOutButton = UIButton(type: .custom)
         zoomOutButton.setImage(UIImage(systemName: "minus"), for: .normal)
-        zoomOutButton.addTarget(self, action: #selector(zoomOut), for: .touchUpInside)
+        //zoomOutButton.addTarget(self, action: zoomOut, for: .touchUpInside)
         
         mapView.addSubview(zoomInButton)
         mapView.addSubview(zoomOutButton)
