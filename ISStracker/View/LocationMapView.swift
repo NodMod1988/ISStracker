@@ -2,21 +2,19 @@ import SwiftUI
 import MapKit
 
 struct LocationMapView: View {
-    
     @EnvironmentObject var viewModel: ISSLocationViewModel
-    @State  var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 51.507222, longitude: -0.1275), span: MKCoordinateSpan(latitudeDelta: 5, longitudeDelta: 5))
-    @State  var zoomFactor = 1.0
-    @State  var annotations: [MKPointAnnotationWithID] = []
     
     var body: some View {
         VStack {
             HStack {
-                Button(action: zoomIn) {
+                Button(action: {
+                    viewModel.zoomIn()
+                }) {
                     Image(systemName: "plus.circle")
                 }
                 .padding()
 
-                Button(action: zoomOut) {
+                Button(action: viewModel.zoomOut) {
                     Image(systemName: "minus.circle")
                 }
                 .padding()
@@ -24,46 +22,19 @@ struct LocationMapView: View {
                 Spacer()
             }
 
-            makeBody()
-        }
-    }
-    
-    private func zoomIn() {
-        zoomFactor /= 2
-        updateRegion()
-    }
-
-    private func zoomOut() {
-        zoomFactor *= 2
-        updateRegion()
-    }
-
-    private func updateRegion() {
-        let span = MKCoordinateSpan(latitudeDelta: region.span.latitudeDelta * zoomFactor, longitudeDelta: region.span.longitudeDelta * zoomFactor)
-        region = MKCoordinateRegion(center: region.center, span: span)
-    }
-        
-    private func makeBody() -> some View {
-        Map(coordinateRegion: $region, annotationItems: annotations) { annotation in
-            MapAnnotation(coordinate: annotation.coordinate) {
-                Image(systemName: "mappin.circle.fill")
-                    .foregroundColor(.red)
+            Map(coordinateRegion: $viewModel.region, annotationItems: viewModel.annotations) { annotation in
+                MapAnnotation(coordinate: annotation.coordinate) {
+                    Image(systemName: "mappin.circle.fill")
+                        .foregroundColor(.red)
+                }
             }
-        }
-        .onAppear {
-            Timer.scheduledTimer(withTimeInterval: 30.0, repeats: true) { timer in
-                viewModel.fetchISSLocation()
+            .onAppear {
+                Timer.scheduledTimer(withTimeInterval: 15.0, repeats: true) { timer in
+                    viewModel.fetchISSLocation()
+                }
+                viewModel.updateRegion() // Aktualisieren der Kartenregion beim ersten Anzeigen der Karte
             }
-        }
-        .onReceive(viewModel.$issLocation) { issLocation in
-            if let issLocation = issLocation {
-                let annotation = MKPointAnnotation()
-                annotation.coordinate = issLocation
-                annotation.title = "ISS Location"
-                annotations = [MKPointAnnotationWithID(__coordinate: annotation.coordinate)]
-                region = MKCoordinateRegion(center: annotation.coordinate, span: MKCoordinateSpan(latitudeDelta: 5, longitudeDelta: 5))
-            }
-        }
 
+        }
     }
 }

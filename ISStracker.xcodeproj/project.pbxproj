@@ -14,7 +14,7 @@
 		890E29EF29CB029B00C848CA /* EarthSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890E29EE29CB029B00C848CA /* EarthSceneView.swift */; };
 		890E29F129CC870600C848CA /* LocationMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890E29F029CC870600C848CA /* LocationMapView.swift */; };
 		890E29F329CC918600C848CA /* ISSLocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890E29F229CC918600C848CA /* ISSLocationViewModel.swift */; };
-		890E29F729D1184400C848CA /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890E29F629D1184400C848CA /* Coordinator.swift */; };
+		89AB901D29D572BA00531A31 /* MKPointAnnotationWithID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89AB901C29D572BA00531A31 /* MKPointAnnotationWithID.swift */; };
 		89B5791A29ACAEDC0021A0C1 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B5791929ACAEDC0021A0C1 /* MainView.swift */; };
 		89B5791C29ACB1230021A0C1 /* AuthProtocoll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B5791B29ACB1230021A0C1 /* AuthProtocoll.swift */; };
 		89B5792029ACC89B0021A0C1 /* ISSApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B5791F29ACC89B0021A0C1 /* ISSApi.swift */; };
@@ -53,7 +53,6 @@
 		89C997D929A8B01F00E53615 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C997D829A8B01F00E53615 /* RegistrationView.swift */; };
 		89C997DC29A8B19100E53615 /* FireStoreAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C997DB29A8B19100E53615 /* FireStoreAuthService.swift */; };
 		89CFDEC629C469A400E784A5 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CFDEC529C469A400E784A5 /* AuthService.swift */; };
-		89E188BC29D442F000712B6D /* MKPointAnnotationWithID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E188BB29D442F000712B6D /* MKPointAnnotationWithID.swift */; };
 		89E2B4C829A36E8300FBD710 /* ISStrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E2B4C729A36E8300FBD710 /* ISStrackerApp.swift */; };
 		89E2B4CA29A36E8300FBD710 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E2B4C929A36E8300FBD710 /* ContentView.swift */; };
 		89E2B4CC29A36E8400FBD710 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89E2B4CB29A36E8400FBD710 /* Assets.xcassets */; };
@@ -69,7 +68,7 @@
 		890E29F029CC870600C848CA /* LocationMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationMapView.swift; sourceTree = "<group>"; };
 		890E29F229CC918600C848CA /* ISSLocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ISSLocationViewModel.swift; sourceTree = "<group>"; };
 		890E29F429CDBA3C00C848CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		890E29F629D1184400C848CA /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		89AB901C29D572BA00531A31 /* MKPointAnnotationWithID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MKPointAnnotationWithID.swift; sourceTree = "<group>"; };
 		89B5791929ACAEDC0021A0C1 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		89B5791B29ACB1230021A0C1 /* AuthProtocoll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthProtocoll.swift; sourceTree = "<group>"; };
 		89B5791F29ACC89B0021A0C1 /* ISSApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ISSApi.swift; sourceTree = "<group>"; };
@@ -82,7 +81,6 @@
 		89C997D829A8B01F00E53615 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		89C997DB29A8B19100E53615 /* FireStoreAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireStoreAuthService.swift; sourceTree = "<group>"; };
 		89CFDEC529C469A400E784A5 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
-		89E188BB29D442F000712B6D /* MKPointAnnotationWithID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MKPointAnnotationWithID.swift; sourceTree = "<group>"; };
 		89E2B4C429A36E8300FBD710 /* ISStracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ISStracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89E2B4C729A36E8300FBD710 /* ISStrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ISStrackerApp.swift; sourceTree = "<group>"; };
 		89E2B4C929A36E8300FBD710 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -139,13 +137,12 @@
 			path = 3DModels;
 			sourceTree = "<group>";
 		};
-		890E29F529D1181500C848CA /* Service */ = {
+		89AB901B29D5728A00531A31 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				890E29F629D1184400C848CA /* Coordinator.swift */,
-				89E188BB29D442F000712B6D /* MKPointAnnotationWithID.swift */,
+				89AB901C29D572BA00531A31 /* MKPointAnnotationWithID.swift */,
 			);
-			path = Service;
+			path = Services;
 			sourceTree = "<group>";
 		};
 		89B5791D29ACC7B60021A0C1 /* ServiceImpl */ = {
@@ -211,7 +208,7 @@
 		89E2B4C629A36E8300FBD710 /* ISStracker */ = {
 			isa = PBXGroup;
 			children = (
-				890E29F529D1181500C848CA /* Service */,
+				89AB901B29D5728A00531A31 /* Services */,
 				890E29F429CDBA3C00C848CA /* Info.plist */,
 				890E29E529C9C32800C848CA /* 3DModels */,
 				890E29E329C9BFA400C848CA /* GoogleService-Info.plist */,
@@ -379,14 +376,13 @@
 				890E29F329CC918600C848CA /* ISSLocationViewModel.swift in Sources */,
 				89C9979829A75C2900E53615 /* SpaceLoginView.swift in Sources */,
 				89E2B4C829A36E8300FBD710 /* ISStrackerApp.swift in Sources */,
-				890E29F729D1184400C848CA /* Coordinator.swift in Sources */,
 				890E29ED29CAFB2000C848CA /* IssSceneView.swift in Sources */,
 				89C997DC29A8B19100E53615 /* FireStoreAuthService.swift in Sources */,
 				89CFDEC629C469A400E784A5 /* AuthService.swift in Sources */,
-				89E188BC29D442F000712B6D /* MKPointAnnotationWithID.swift in Sources */,
 				89C9979A29A75CFF00E53615 /* AuthViewModel.swift in Sources */,
 				89B5792329ACC8D50021A0C1 /* ISSApiImpl.swift in Sources */,
 				89C997D929A8B01F00E53615 /* RegistrationView.swift in Sources */,
+				89AB901D29D572BA00531A31 /* MKPointAnnotationWithID.swift in Sources */,
 				89B5792029ACC89B0021A0C1 /* ISSApi.swift in Sources */,
 				89B5792529ACE49D0021A0C1 /* DataSource.swift in Sources */,
 				89B5791C29ACB1230021A0C1 /* AuthProtocoll.swift in Sources */,
