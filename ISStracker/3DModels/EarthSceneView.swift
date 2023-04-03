@@ -36,9 +36,7 @@ struct EarthSceneView: UIViewRepresentable {
     }
     
     func updateUIView(_ uiView: SCNView, context: Context) {
-    }
-    
-    
+    }  
  
 }
 

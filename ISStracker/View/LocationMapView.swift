@@ -28,7 +28,7 @@ struct LocationMapView: View {
                 }
             }
             .onAppear {
-                Timer.scheduledTimer(withTimeInterval: 15.0, repeats: true) { timer in
+                Timer.scheduledTimer(withTimeInterval: 2.0, repeats: true) { timer in
                     viewModel.fetchISSLocation()
                 }
                 viewModel.updateRegion() // Aktualisieren der Kartenregion beim ersten Anzeigen der Karte

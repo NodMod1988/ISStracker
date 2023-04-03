@@ -15,29 +15,35 @@ struct MainView: View {
     @State var sceneISS: SCNScene? = .init(named: "ISS.usdz")
     @State var sceneEarth: SCNScene? = .init(named: "Earth.usdz")
     @EnvironmentObject var locationViewModel: ISSLocationViewModel
+    @State var navigateToMapView = false
     var body: some View {
         
-        TabView{
-            ZStack{
-                EarthSceneView(scene: $sceneEarth)
-                
-                VStack{
-                    IssSceneView(scene: $sceneISS)
-                        .frame(height: 350)
+        NavigationView{
+            TabView{
+                ZStack{
+                    EarthSceneView(scene: $sceneEarth)
+                        .onTapGesture {
+                            navigateToMapView = true
+                        }
                     
-                    
+                    VStack{
+                        IssSceneView(scene: $sceneISS)
+                            .frame(height: 350)
+                    }
+                    .padding()
                 }
-                .padding()
-            }
-            
-            
-            LocationMapView()
+                .background(NavigationLink(destination: LocationMapView(), isActive: $navigateToMapView){
+                    
+                    
+                    
+                })
+                
+                
                 .tabItem{
                     Label("Click me", systemImage: "")
                 }
+            }
         }
-        
-        
     }
 }
 
