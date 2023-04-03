@@ -9,5 +9,5 @@ import Foundation
 
 protocol ISSApi{
     
-    func fetchData(completion: @escaping(DataSource) -> Void)
+    func fetchData(completion: @escaping(Position) -> Void)
 }

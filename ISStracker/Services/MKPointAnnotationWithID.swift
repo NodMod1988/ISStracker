@@ -9,7 +9,7 @@
 import Foundation
 import MapKit
 
-class MKPointAnnotationWithID: MKPointAnnotation, Identifiable {
+class MKPointAnnotationWithID: MKPointAnnotation {
     override var coordinate: CLLocationCoordinate2D {
         didSet {
             self.id = "\(coordinate.latitude),\(coordinate.longitude)"

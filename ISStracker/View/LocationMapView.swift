@@ -1,15 +1,14 @@
 import SwiftUI
 import MapKit
 
+
 struct LocationMapView: View {
     @EnvironmentObject var viewModel: ISSLocationViewModel
     
     var body: some View {
         VStack {
             HStack {
-                Button(action: {
-                    viewModel.zoomIn()
-                }) {
+                Button(action: viewModel.zoomIn) {
                     Image(systemName: "plus.circle")
                 }
                 .padding()
@@ -22,7 +21,7 @@ struct LocationMapView: View {
                 Spacer()
             }
 
-            Map(coordinateRegion: $viewModel.region, annotationItems: viewModel.annotations) { annotation in
+            Map(coordinateRegion: $viewModel.region, interactionModes: [.zoom], showsUserLocation: true, userTrackingMode: .none, annotationItems: viewModel.annotations) { annotation in
                 MapAnnotation(coordinate: annotation.coordinate) {
                     Image(systemName: "mappin.circle.fill")
                         .foregroundColor(.red)
@@ -34,7 +33,8 @@ struct LocationMapView: View {
                 }
                 viewModel.updateRegion() // Aktualisieren der Kartenregion beim ersten Anzeigen der Karte
             }
-
         }
     }
 }
+
+extension MKPointAnnotation: Identifiable {}

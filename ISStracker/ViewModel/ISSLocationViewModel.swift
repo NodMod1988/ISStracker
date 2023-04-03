@@ -33,6 +33,7 @@ class ISSLocationViewModel: NSObject, ObservableObject, CLLocationManagerDelegat
             case .success(let coordinate):
                 DispatchQueue.main.async {
                     let annotation = MKPointAnnotation()
+                    
                     annotation.coordinate = coordinate
                     self.annotations = [annotation]
                     self.region.center = coordinate
@@ -58,15 +59,22 @@ class ISSLocationViewModel: NSObject, ObservableObject, CLLocationManagerDelegat
                 completion(.failure(NSError(domain: "ISSLocationViewModel", code: 0, userInfo: [NSLocalizedDescriptionKey: "Invalid data"])))
                 return
             }
-            guard let issLocation = try? JSONDecoder().decode(Position.self, from: data) else {
+            guard let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any],
+                  let issPosition = json["iss_position"] as? [String: String],
+                  let latitudeStr = issPosition["latitude"],
+                  let longitudeStr = issPosition["longitude"],
+                  let latitude = Double(latitudeStr),
+                  let longitude = Double(longitudeStr) else {
                 completion(.failure(NSError(domain: "ISSLocationViewModel", code: 0, userInfo: [NSLocalizedDescriptionKey: "Failed to decode JSON data"])))
                 return
             }
-            let location = CLLocationCoordinate2D(latitude: Position.latitude.doubleValue, longitude: Position.longitude.doubleValue)
+            let location = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
             completion(.success(location))
         }
         task.resume()
     }
+
+
     
     func zoomIn() {
         let span = MKCoordinateSpan(
