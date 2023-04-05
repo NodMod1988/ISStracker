@@ -8,6 +8,7 @@ class ISSLocationViewModel: NSObject, ObservableObject, CLLocationManagerDelegat
         center: CLLocationCoordinate2D(latitude: 0, longitude: 0),
         span: MKCoordinateSpan(latitudeDelta: 90, longitudeDelta: 90)
     )
+    
     @Published var annotations: [MKPointAnnotation] = []
     
     private let locationManager = CLLocationManager()
@@ -48,7 +49,7 @@ class ISSLocationViewModel: NSObject, ObservableObject, CLLocationManagerDelegat
         let urlString = "http://api.open-notify.org/iss-now.json"
         guard let url = URL(string: urlString) else {
             completion(.failure(NSError(domain: "ISSLocationViewModel", code: 0, userInfo: [NSLocalizedDescriptionKey: "Invalid URL"])))
-            return
+            return  
         }
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
             if let error = error {
@@ -73,8 +74,8 @@ class ISSLocationViewModel: NSObject, ObservableObject, CLLocationManagerDelegat
         }
         task.resume()
     }
-
-
+    
+    
     
     func zoomIn() {
         let span = MKCoordinateSpan(
@@ -97,4 +98,30 @@ class ISSLocationViewModel: NSObject, ObservableObject, CLLocationManagerDelegat
             region.center = coordinate
         }
     }
+    
+    func getAstronauts(completion: @escaping (Result<AstronautResponse, Error>) -> Void) {
+        let urlString = "http://api.open-notify.org/astros.json"
+        guard let url = URL(string: urlString) else {
+            completion(.failure(NSError(domain: "ISSLocationViewModel", code: 0, userInfo: [NSLocalizedDescriptionKey: "Invalid URL"])))
+            return
+        }
+        let task = URLSession.shared.dataTask(with: url) { data, response, error in
+            if let error = error {
+                completion(.failure(error))
+                return
+            }
+            guard let data = data else {
+                completion(.failure(NSError(domain: "ISSLocationViewModel", code: 0, userInfo: [NSLocalizedDescriptionKey: "Invalid data"])))
+                return
+            }
+            guard let astronautResponse = try? JSONDecoder().decode(AstronautResponse.self, from: data) else {
+                completion(.failure(NSError(domain: "ISSLocationViewModel", code: 0, userInfo: [NSLocalizedDescriptionKey: "Failed to decode JSON data"])))
+                return
+            }
+            completion(.success(astronautResponse))
+        }
+        task.resume()
+    }
+    
+        
 }

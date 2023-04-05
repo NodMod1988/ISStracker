@@ -16,10 +16,11 @@ struct MainView: View {
     @State var sceneEarth: SCNScene? = .init(named: "Earth.usdz")
     @EnvironmentObject var locationViewModel: ISSLocationViewModel
     @State var navigateToMapView = false
+
     var body: some View {
         
         NavigationView{
-            TabView{
+            TabView(){
                 ZStack{
                     EarthSceneView(scene: $sceneEarth)
                         .onTapGesture {
@@ -33,15 +34,14 @@ struct MainView: View {
                     .padding()
                 }
                 .background(NavigationLink(destination: LocationMapView(), isActive: $navigateToMapView){
-                    
-                    
-                    
+
                 })
                 
-                
+              
                 .tabItem{
-                    Label("Click me", systemImage: "")
+                    Label("ISS Location", systemImage: "")
                 }
+       
             }
         }
     }

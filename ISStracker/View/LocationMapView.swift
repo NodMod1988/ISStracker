@@ -1,9 +1,13 @@
 import SwiftUI
 import MapKit
 
+import SwiftUI
+import MapKit
 
 struct LocationMapView: View {
     @EnvironmentObject var viewModel: ISSLocationViewModel
+    @EnvironmentObject var userLocationViewModel: UserLocationViewModel
+    @State private var distance: CLLocationDistance = 0
     
     var body: some View {
         VStack {
@@ -12,29 +16,39 @@ struct LocationMapView: View {
                     Image(systemName: "plus.circle")
                 }
                 .padding()
-
+                
                 Button(action: viewModel.zoomOut) {
                     Image(systemName: "minus.circle")
                 }
                 .padding()
-
+                
+                Spacer()
+                
+                Text("Distance: \(Int(distance)) km")
+                
                 Spacer()
             }
-
+            
             Map(coordinateRegion: $viewModel.region, interactionModes: [.zoom], showsUserLocation: true, userTrackingMode: .none, annotationItems: viewModel.annotations) { annotation in
                 MapAnnotation(coordinate: annotation.coordinate) {
                     Image(systemName: "mappin.circle.fill")
                         .foregroundColor(.red)
                 }
+                
             }
             .onAppear {
                 Timer.scheduledTimer(withTimeInterval: 2.0, repeats: true) { timer in
                     viewModel.fetchISSLocation()
                 }
-                viewModel.updateRegion() // Aktualisieren der Kartenregion beim ersten Anzeigen der Karte
+                viewModel.updateRegion()
+                
+                if let userLocation = userLocationViewModel.location {
+                    self.distance = DistanceCalculator.calculateDistance(from: userLocation.coordinate, to: viewModel.location!)
+                }
             }
         }
     }
 }
+
 
 extension MKPointAnnotation: Identifiable {}

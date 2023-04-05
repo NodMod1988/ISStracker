@@ -27,9 +27,7 @@ struct ISStrackerApp: App {
             ContentView()
                 .environmentObject(FireStoreAuthService())
                 .environmentObject(ISSLocationViewModel())
-                
-                
-                
+                .environmentObject(UserLocationViewModel())   
         }
     }
 }

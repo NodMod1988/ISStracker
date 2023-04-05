@@ -25,7 +25,6 @@ struct EarthSceneView: UIViewRepresentable {
         let rotateAction = SCNAction.repeatForever(SCNAction.rotate(by: .pi, around: SCNVector3(x:0, y:1, z:0), duration: 50))
         view.scene?.rootNode.runAction(rotateAction)
         
-        let cameraNode = SCNNode()
         
 
         let poi = SCNNode()
