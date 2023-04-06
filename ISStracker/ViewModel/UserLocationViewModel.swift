@@ -12,7 +12,9 @@ class UserLocationViewModel: NSObject, ObservableObject, CLLocationManagerDelega
     @Published var authorizationStatus: CLAuthorizationStatus
     @Published var location: CLLocation? = nil
     
-    private let locationManager: CLLocationManager
+    weak var viewModel: ISSLocationViewModel?
+    
+    let locationManager: CLLocationManager
     
     override init() {
         locationManager = CLLocationManager()
@@ -39,13 +41,6 @@ class UserLocationViewModel: NSObject, ObservableObject, CLLocationManagerDelega
         authorizationStatus = manager.authorizationStatus
     }
     
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let newLocation = locations.last else { return }
-        
-        // Check if the new location is valid
-        let age = -newLocation.timestamp.timeIntervalSinceNow
-        guard age < 15.0, newLocation.horizontalAccuracy >= 0 else { return }
-        
-        location = newLocation
-    }
+    
+   
 }

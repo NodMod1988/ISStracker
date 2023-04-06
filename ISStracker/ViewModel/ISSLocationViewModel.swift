@@ -11,23 +11,6 @@ class ISSLocationViewModel: NSObject, ObservableObject, CLLocationManagerDelegat
     
     @Published var annotations: [MKPointAnnotation] = []
     
-    private let locationManager = CLLocationManager()
-    
-    override init() {
-        super.init()
-        locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.requestWhenInUseAuthorization()
-        locationManager.startUpdatingLocation()
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let lastLocation = locations.last else {
-            return
-        }
-        location = lastLocation.coordinate
-    }
-    
     func fetchISSLocation() {
         getISSLocation { result in
             switch result {
@@ -38,6 +21,7 @@ class ISSLocationViewModel: NSObject, ObservableObject, CLLocationManagerDelegat
                     annotation.coordinate = coordinate
                     self.annotations = [annotation]
                     self.region.center = coordinate
+                    self.location = coordinate
                 }
             case .failure(let error):
                 print(error.localizedDescription)
@@ -87,6 +71,9 @@ class ISSLocationViewModel: NSObject, ObservableObject, CLLocationManagerDelegat
     
     func zoomOut() {
         let span = MKCoordinateSpan(
+           // Grenze bearbeiten!
+            
+            
             latitudeDelta: region.span.latitudeDelta * 2,
             longitudeDelta: region.span.longitudeDelta * 2
         )
@@ -123,5 +110,12 @@ class ISSLocationViewModel: NSObject, ObservableObject, CLLocationManagerDelegat
         task.resume()
     }
     
-        
+    func distanceInKilometers(from coordinate1: CLLocationCoordinate2D, to coordinate2: CLLocationCoordinate2D) -> CLLocationDistance {
+            let location1 = CLLocation(latitude: coordinate1.latitude, longitude: coordinate1.longitude)
+            print("aus dem ISSViewModel \(location1)")
+        let location2 = CLLocation(latitude: coordinate2.latitude, longitude: coordinate2.longitude)
+            print("aus dem ISSViewModel \(location2)")
+        return (location1.distance(from: location2)) / 1000
+        }
+     
 }

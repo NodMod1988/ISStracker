@@ -1,4 +1,3 @@
-import SwiftUI
 import MapKit
 
 import SwiftUI
@@ -7,7 +6,7 @@ import MapKit
 struct LocationMapView: View {
     @EnvironmentObject var viewModel: ISSLocationViewModel
     @EnvironmentObject var userLocationViewModel: UserLocationViewModel
-    @State private var distance: CLLocationDistance = 0
+    @State var distance: CLLocationDistance = 0
     
     var body: some View {
         VStack {
@@ -39,16 +38,20 @@ struct LocationMapView: View {
             .onAppear {
                 Timer.scheduledTimer(withTimeInterval: 2.0, repeats: true) { timer in
                     viewModel.fetchISSLocation()
+                    if let userLocation = userLocationViewModel.locationManager.location{
+                        print("Aus dem LocationMapView \(userLocation.coordinate.latitude)" )
+                        
+                        if(viewModel.location != nil){
+                            self.distance = viewModel.distanceInKilometers(from: userLocation.coordinate, to: viewModel.location!)
+                        }
+                    }
+                    print("\(viewModel.location?.latitude ?? 0.0) ")
+                    
                 }
                 viewModel.updateRegion()
-                
-                if let userLocation = userLocationViewModel.location {
-                    self.distance = DistanceCalculator.calculateDistance(from: userLocation.coordinate, to: viewModel.location!)
-                }
             }
         }
     }
 }
-
 
 extension MKPointAnnotation: Identifiable {}
