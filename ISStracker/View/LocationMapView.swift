@@ -11,15 +11,34 @@ struct LocationMapView: View {
     var body: some View {
         VStack {
             HStack {
-                Button(action: viewModel.zoomIn) {
-                    Image(systemName: "plus.circle")
-                }
-                .padding()
                 
-                Button(action: viewModel.zoomOut) {
+                Button {
+                    
+                    if(viewModel.region.span.latitudeDelta == 1 && viewModel.region.span.longitudeDelta == 1){
+                        
+                    }else{
+                        viewModel.zoomIn()
+                    }
+                } label: {
+                    Image(systemName: "plus.circle")
+                }.padding()
+
+                
+        
+                
+                
+                Button {
+                    
+                    if(viewModel.region.span.longitudeDelta == 360 && viewModel.region.span.latitudeDelta == 360){
+                        
+                    }else{
+                        viewModel.zoomOut()
+                    }
+                } label: {
                     Image(systemName: "minus.circle")
-                }
-                .padding()
+                }.padding()
+                
+            
                 
                 Spacer()
                 
@@ -33,7 +52,6 @@ struct LocationMapView: View {
                     Image(systemName: "mappin.circle.fill")
                         .foregroundColor(.red)
                 }
-                
             }
             .onAppear {
                 Timer.scheduledTimer(withTimeInterval: 2.0, repeats: true) { timer in

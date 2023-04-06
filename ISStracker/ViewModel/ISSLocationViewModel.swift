@@ -62,21 +62,44 @@ class ISSLocationViewModel: NSObject, ObservableObject, CLLocationManagerDelegat
     
     
     func zoomIn() {
-        let span = MKCoordinateSpan(
+        var span = MKCoordinateSpan(
             latitudeDelta: region.span.latitudeDelta / 2,
             longitudeDelta: region.span.longitudeDelta / 2
         )
+        
+        if(span.latitudeDelta ==  0){
+            
+            span.latitudeDelta = 1
+        }
+        if(span.longitudeDelta == 0){
+            span.longitudeDelta = 1
+        }
         region.span = span
     }
     
     func zoomOut() {
-        let span = MKCoordinateSpan(
+
+        
+        
+        print("longitudeDelta: \(region.span.longitudeDelta)")
+        print("latitudeDelta:  \(region.span.latitudeDelta)")
+        var span = MKCoordinateSpan(
            // Grenze bearbeiten!
             
             
             latitudeDelta: region.span.latitudeDelta * 2,
             longitudeDelta: region.span.longitudeDelta * 2
         )
+        
+        if(span.latitudeDelta > 180){
+            
+            span.latitudeDelta = 179
+        }
+        if(span.longitudeDelta > 360){
+            span.longitudeDelta = 359
+        }
+
+        print("Aus der ISSLocationViewModel span: \(span)")
         region.span = span
     }
     
