@@ -1,9 +1,3 @@
-//
-//  ISStrackerApp.swift
-//  ISStracker
-//
-//  Created by Ruben Niewerth on 20.02.23.
-//
 
 import SwiftUI
 import FirebaseCore
@@ -22,12 +16,17 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 struct ISStrackerApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     
+
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
                 .environmentObject(FireStoreAuthService())
                 .environmentObject(ISSLocationViewModel())
-                .environmentObject(UserLocationViewModel())   
+                .environmentObject(UserLocationViewModel())
+                .environmentObject(EarthSceneViewModel())
+                
+            
         }
     }
 }

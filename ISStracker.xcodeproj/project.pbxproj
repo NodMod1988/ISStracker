@@ -20,6 +20,8 @@
 		89A83C4A29DC07FB00412B0F /* UserLocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A83C4929DC07FB00412B0F /* UserLocationViewModel.swift */; };
 		89AA581F29DA5E4F001E487B /* MapAnnotationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89AA581E29DA5E4F001E487B /* MapAnnotationItem.swift */; };
 		89AB901D29D572BA00531A31 /* MKPointAnnotationWithID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89AB901C29D572BA00531A31 /* MKPointAnnotationWithID.swift */; };
+		89B3CF5729EE396E0063ABBF /* EarthSceneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B3CF5629EE396E0063ABBF /* EarthSceneViewModel.swift */; };
+		89B3CF5929EE39FA0063ABBF /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B3CF5829EE39FA0063ABBF /* SettingsView.swift */; };
 		89B5791A29ACAEDC0021A0C1 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B5791929ACAEDC0021A0C1 /* MainView.swift */; };
 		89B5791C29ACB1230021A0C1 /* AuthProtocoll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B5791B29ACB1230021A0C1 /* AuthProtocoll.swift */; };
 		89B5792029ACC89B0021A0C1 /* ISSApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B5791F29ACC89B0021A0C1 /* ISSApi.swift */; };
@@ -78,6 +80,8 @@
 		89A83C4929DC07FB00412B0F /* UserLocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLocationViewModel.swift; sourceTree = "<group>"; };
 		89AA581E29DA5E4F001E487B /* MapAnnotationItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapAnnotationItem.swift; sourceTree = "<group>"; };
 		89AB901C29D572BA00531A31 /* MKPointAnnotationWithID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MKPointAnnotationWithID.swift; sourceTree = "<group>"; };
+		89B3CF5629EE396E0063ABBF /* EarthSceneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarthSceneViewModel.swift; sourceTree = "<group>"; };
+		89B3CF5829EE39FA0063ABBF /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		89B5791929ACAEDC0021A0C1 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		89B5791B29ACB1230021A0C1 /* AuthProtocoll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthProtocoll.swift; sourceTree = "<group>"; };
 		89B5791F29ACC89B0021A0C1 /* ISSApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ISSApi.swift; sourceTree = "<group>"; };
@@ -250,6 +254,7 @@
 				89C997D829A8B01F00E53615 /* RegistrationView.swift */,
 				89B5791929ACAEDC0021A0C1 /* MainView.swift */,
 				890E29F029CC870600C848CA /* LocationMapView.swift */,
+				89B3CF5829EE39FA0063ABBF /* SettingsView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -271,6 +276,7 @@
 				89C9979929A75CFF00E53615 /* AuthViewModel.swift */,
 				890E29F229CC918600C848CA /* ISSLocationViewModel.swift */,
 				89A83C4929DC07FB00412B0F /* UserLocationViewModel.swift */,
+				89B3CF5629EE396E0063ABBF /* EarthSceneViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -389,6 +395,7 @@
 				89A83C4A29DC07FB00412B0F /* UserLocationViewModel.swift in Sources */,
 				890E29F329CC918600C848CA /* ISSLocationViewModel.swift in Sources */,
 				89A83C2929DAE09800412B0F /* Astronaut.swift in Sources */,
+				89B3CF5929EE39FA0063ABBF /* SettingsView.swift in Sources */,
 				89C9979829A75C2900E53615 /* SpaceLoginView.swift in Sources */,
 				89E2B4C829A36E8300FBD710 /* ISStrackerApp.swift in Sources */,
 				890E29ED29CAFB2000C848CA /* IssSceneView.swift in Sources */,
@@ -396,6 +403,7 @@
 				89CFDEC629C469A400E784A5 /* AuthService.swift in Sources */,
 				89A83C2729DAE06200412B0F /* AstronautResponse.swift in Sources */,
 				89C9979A29A75CFF00E53615 /* AuthViewModel.swift in Sources */,
+				89B3CF5729EE396E0063ABBF /* EarthSceneViewModel.swift in Sources */,
 				89A74B3C29DCB5AF0060AA91 /* DistanceCalculator.swift in Sources */,
 				89C997D929A8B01F00E53615 /* RegistrationView.swift in Sources */,
 				89AB901D29D572BA00531A31 /* MKPointAnnotationWithID.swift in Sources */,

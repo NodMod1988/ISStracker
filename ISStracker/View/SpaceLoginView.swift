@@ -52,7 +52,7 @@ struct SpaceLoginView: View {
                     Divider()
                     
                     Button(action: {
-                        authService.signUp(email: "", password: "")
+                        authService.signIn(email: email, password: password)
                     }) {
                         Text("Login")
                             .font(.headline)

@@ -1,10 +1,3 @@
-//
-//  AuthService.swift
-//  ISStracker
-//
-//  Created by Ruben Niewerth on 24.02.23.
-//
-
 import Foundation
 import FirebaseAuth
 
@@ -36,14 +29,16 @@ final class FireStoreAuthService: ObservableObject{
         }
     }
     
-    func signIn(email: String, password: String){
-        Auth.auth().signIn(withEmail: email, password: password){ result, error in
-            if let error = error{
-                print("an error occured \(error)")
+    func signIn(email: String, password: String) {
+        Auth.auth().signIn(withEmail: email, password: password) { result, error in
+            if let error = error {
+                print("Sign in failed: \(error)")
                 return
             }
+            print("User signed in")
         }
     }
+
     
     func signOut(){
         do{

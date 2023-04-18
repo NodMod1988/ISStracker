@@ -1,5 +1,5 @@
-import SwiftUI
 import SceneKit
+import SwiftUI
 
 struct MainView: View {
     @State var sceneISS: SCNScene? = .init(named: "ISS.usdz")
@@ -7,12 +7,17 @@ struct MainView: View {
     @EnvironmentObject var locationViewModel: ISSLocationViewModel
     @State var navigateToMapView = false
     @Environment(\.presentationMode) var presentationMode
-
+    @EnvironmentObject var authService: FireStoreAuthService
+    @EnvironmentObject var earthSceneViewModel: EarthSceneViewModel
+    
+    @State var navigateToSettingsView = false 
+    
     var body: some View {
         NavigationView{
             TabView(){
                 ZStack{
                     EarthSceneView(scene: $sceneEarth)
+                        .environmentObject(earthSceneViewModel)
                         .onTapGesture {
                             navigateToMapView = true
                         }
@@ -29,21 +34,27 @@ struct MainView: View {
                 }
             }
             .navigationBarTitle("ISS Tracker", displayMode: .inline)
-            .navigationBarItems(trailing:
-                Button(action: {
-                    UserDefaults.standard.set(false, forKey: "isUserLoggedIn")
-                    self.presentationMode.wrappedValue.dismiss()
-                }) {
-                    Text("Logout")
-                        .foregroundColor(.red)
-                }
+            .navigationBarItems(
+                trailing:
+                    HStack {
+                        Button(action: {
+                            navigateToSettingsView = true
+                        }) {
+                            Image(systemName: "gear")
+                        }
+                        Button(action: {
+                            UserDefaults.standard.set(false, forKey: "isUserLoggedIn")
+                            authService.signOut()
+                        }) {
+                            Text("Logout")
+                                .foregroundColor(.red)
+                        }
+                    }
             )
+            .sheet(isPresented: $navigateToSettingsView) {
+                SettingsView()
+            }
         }
     }
 }
 
-struct MainView_Previews: PreviewProvider {
-    static var previews: some View {
-        MainView()
-    }
-}
