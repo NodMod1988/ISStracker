@@ -15,7 +15,7 @@ struct SettingsView: View {
         NavigationView {
             Form {
                 Section(header: Text("Earth Rotation Speed")) {
-                    Slider(value: $earthSceneViewModel.earthRotationSpeed, in: 50...100, step: 20)
+                    Slider(value: $earthSceneViewModel.earthRotationSpeed, in: 1...100, step: 5)
                 }
             }
             .navigationBarTitle(Text("Settings"))

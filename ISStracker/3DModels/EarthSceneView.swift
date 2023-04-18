@@ -35,6 +35,7 @@ struct EarthSceneView: UIViewRepresentable {
     func updateUIView(_ uiView: SCNView, context: Context) {
         uiView.scene = scene
         let rotateAction = SCNAction.repeatForever(SCNAction.rotate(by: .pi, around: SCNVector3(x: 0, y: 1, z: 0), duration: earthSceneViewModel.earthRotationSpeed))
+        uiView.scene?.rootNode.removeAllActions()
         uiView.scene?.rootNode.runAction(rotateAction)
     }
 }
