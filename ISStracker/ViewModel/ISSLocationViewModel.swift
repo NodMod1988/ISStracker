@@ -3,6 +3,8 @@ import MapKit
 
 class ISSLocationViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
     
+    @Published var astronautsResponse: AstronautResponse?
+
     @Published var location: CLLocationCoordinate2D?
     @Published var region = MKCoordinateRegion(
         center: CLLocationCoordinate2D(latitude: 0, longitude: 0),
@@ -124,14 +126,16 @@ class ISSLocationViewModel: NSObject, ObservableObject, CLLocationManagerDelegat
                 completion(.failure(NSError(domain: "ISSLocationViewModel", code: 0, userInfo: [NSLocalizedDescriptionKey: "Invalid data"])))
                 return
             }
-            guard let astronautResponse = try? JSONDecoder().decode(AstronautResponse.self, from: data) else {
-                completion(.failure(NSError(domain: "ISSLocationViewModel", code: 0, userInfo: [NSLocalizedDescriptionKey: "Failed to decode JSON data"])))
-                return
+            do {
+                let astronautResponse = try JSONDecoder().decode(AstronautResponse.self, from: data)
+                completion(.success(astronautResponse))
+            } catch {
+                completion(.failure(error))
             }
-            completion(.success(astronautResponse))
         }
         task.resume()
     }
+
     
     func distanceInKilometers(from coordinate1: CLLocationCoordinate2D, to coordinate2: CLLocationCoordinate2D) -> CLLocationDistance {
             let location1 = CLLocation(latitude: coordinate1.latitude, longitude: coordinate1.longitude)

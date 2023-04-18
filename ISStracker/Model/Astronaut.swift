@@ -7,7 +7,10 @@
 
 import Foundation
 
-struct Astronaut: Codable {
+struct Astronaut: Codable, Identifiable {
+    var id: String {
+            name
+        }
     let craft: String
     let name: String
 }

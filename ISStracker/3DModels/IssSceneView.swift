@@ -21,6 +21,10 @@ struct IssSceneView: UIViewRepresentable {
         view.scene = scene
         view.backgroundColor = .clear
         
+        let poi = SCNNode()
+        poi.position = SCNVector3(x: 0, y: 0, z: 0)
+        view.pointOfView?.addChildNode(poi)
+        
         
         return view
     }

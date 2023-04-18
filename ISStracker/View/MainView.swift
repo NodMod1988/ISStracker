@@ -6,6 +6,7 @@ struct MainView: View {
     @State var sceneEarth: SCNScene? = .init(named: "Earth.usdz")
     @EnvironmentObject var locationViewModel: ISSLocationViewModel
     @State var navigateToMapView = false
+    @State var navigateToCrewView = false
     @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var authService: FireStoreAuthService
     @EnvironmentObject var earthSceneViewModel: EarthSceneViewModel
@@ -24,8 +25,13 @@ struct MainView: View {
                     VStack{
                         IssSceneView(scene: $sceneISS)
                             .frame(height: 350)
+                            .onTapGesture {
+                                navigateToCrewView = true
+                            }
+                        
                     }
                     .padding()
+                    .background(NavigationLink(destination: AstronautsListView(), isActive: $navigateToCrewView){})
                 }
                 .background(NavigationLink(destination: LocationMapView(), isActive: $navigateToMapView){})
 
@@ -54,6 +60,7 @@ struct MainView: View {
             .sheet(isPresented: $navigateToSettingsView) {
                 SettingsView()
             }
+            
         }
     }
 }

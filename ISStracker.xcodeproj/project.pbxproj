@@ -22,6 +22,7 @@
 		89AB901D29D572BA00531A31 /* MKPointAnnotationWithID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89AB901C29D572BA00531A31 /* MKPointAnnotationWithID.swift */; };
 		89B3CF5729EE396E0063ABBF /* EarthSceneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B3CF5629EE396E0063ABBF /* EarthSceneViewModel.swift */; };
 		89B3CF5929EE39FA0063ABBF /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B3CF5829EE39FA0063ABBF /* SettingsView.swift */; };
+		89B3CF5B29EEA4450063ABBF /* AstronautListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B3CF5A29EEA4450063ABBF /* AstronautListView.swift */; };
 		89B5791A29ACAEDC0021A0C1 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B5791929ACAEDC0021A0C1 /* MainView.swift */; };
 		89B5791C29ACB1230021A0C1 /* AuthProtocoll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B5791B29ACB1230021A0C1 /* AuthProtocoll.swift */; };
 		89B5792029ACC89B0021A0C1 /* ISSApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B5791F29ACC89B0021A0C1 /* ISSApi.swift */; };
@@ -82,6 +83,8 @@
 		89AB901C29D572BA00531A31 /* MKPointAnnotationWithID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MKPointAnnotationWithID.swift; sourceTree = "<group>"; };
 		89B3CF5629EE396E0063ABBF /* EarthSceneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarthSceneViewModel.swift; sourceTree = "<group>"; };
 		89B3CF5829EE39FA0063ABBF /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		89B3CF5A29EEA4450063ABBF /* AstronautListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstronautListView.swift; sourceTree = "<group>"; };
+		89B3CF5D29EEB76F0063ABBF /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		89B5791929ACAEDC0021A0C1 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		89B5791B29ACB1230021A0C1 /* AuthProtocoll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthProtocoll.swift; sourceTree = "<group>"; };
 		89B5791F29ACC89B0021A0C1 /* ISSApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ISSApi.swift; sourceTree = "<group>"; };
@@ -159,6 +162,14 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		89B3CF5C29EEB74E0063ABBF /* Playgrounds */ = {
+			isa = PBXGroup;
+			children = (
+				89B3CF5D29EEB76F0063ABBF /* MyPlayground.playground */,
+			);
+			path = Playgrounds;
+			sourceTree = "<group>";
+		};
 		89B5791D29ACC7B60021A0C1 /* ServiceImpl */ = {
 			isa = PBXGroup;
 			children = (
@@ -221,6 +232,7 @@
 		89E2B4C629A36E8300FBD710 /* ISStracker */ = {
 			isa = PBXGroup;
 			children = (
+				89B3CF5C29EEB74E0063ABBF /* Playgrounds */,
 				89AB901B29D5728A00531A31 /* Services */,
 				890E29F429CDBA3C00C848CA /* Info.plist */,
 				890E29E529C9C32800C848CA /* 3DModels */,
@@ -255,6 +267,7 @@
 				89B5791929ACAEDC0021A0C1 /* MainView.swift */,
 				890E29F029CC870600C848CA /* LocationMapView.swift */,
 				89B3CF5829EE39FA0063ABBF /* SettingsView.swift */,
+				89B3CF5A29EEA4450063ABBF /* AstronautListView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -397,6 +410,7 @@
 				89A83C2929DAE09800412B0F /* Astronaut.swift in Sources */,
 				89B3CF5929EE39FA0063ABBF /* SettingsView.swift in Sources */,
 				89C9979829A75C2900E53615 /* SpaceLoginView.swift in Sources */,
+				89B3CF5B29EEA4450063ABBF /* AstronautListView.swift in Sources */,
 				89E2B4C829A36E8300FBD710 /* ISStrackerApp.swift in Sources */,
 				890E29ED29CAFB2000C848CA /* IssSceneView.swift in Sources */,
 				89C997DC29A8B19100E53615 /* FireStoreAuthService.swift in Sources */,
